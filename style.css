@@ -1,0 +1,153 @@
+:root {
+  --dark: black;
+  --light: white;
+}
+
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(112deg, rgba(102,45,140,1) 0%, rgba(102,45,140,1) 35%, rgba(237,30,121,1) 100%);
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock {
+  height: 300px;
+  width: 300px;
+  position: relative;
+  background-color: rgba(255, 255, 255, .8);
+  border-radius: 50%;
+  border: 2px solid var(--dark);
+}
+
+.clock .number {
+  --rotation: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transform: rotate(var(--rotation));
+  font-size: 1.8rem;
+}
+
+.clock .number1 { --rotation: 30deg; }
+.clock .number2 { --rotation: 60deg; }
+.clock .number3 { --rotation: 90deg; }
+.clock .number4 { --rotation: 120deg; }
+.clock .number5 { --rotation: 150deg; }
+.clock .number6 { --rotation: 180deg; }
+.clock .number7 { --rotation: 210deg; }
+.clock .number8 { --rotation: 240deg; }
+.clock .number9 { --rotation: 270deg; }
+.clock .number10 { --rotation: 300deg; }
+.clock .number11 { --rotation: 330deg; }
+
+.clock .hand {
+  --rotation: 0;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  border: 1px solid var(--light);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  transform-origin: bottom;
+  z-index: 10;
+  transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+}
+
+.clock::after {
+  content: '';
+  position: absolute;
+  background-color: var(--dark);
+  z-index: 11;
+  width: 18px;
+  height: 18px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.clock .hand.second {
+  width: 6px;
+  height: 45%;
+  background-color: rebeccapurple;
+  border: none;
+}
+
+.clock .hand.minute {
+  width: 8px;
+  height: 40%;
+  background-color: var(--dark);
+  border: none;
+}
+
+.clock .hand.hour {
+  width: 10px;
+  height: 34%;
+  background-color: var(--dark);
+  border: none;
+}
+
+/* Background Styles */
+
+@import url('https://fonts.googleapis.com/css?family=Arpey');
+
+* {
+  font-family: 'Arpey', serif;
+}
+
+.side-links {
+  position: absolute;
+  top: 20px;
+  right: 16px;
+}
+
+.side-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  margin-bottom: 18px;
+  color: var(--light);
+  width: 200px;
+  padding: 12px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px 4px rgba(255, 255, 255, .8);
+}
+
+.side-link:hover {
+  background-color: #662d8c;
+  color: var(--dark);
+}
+
+.side-link-facebook {
+  background-color: #3b5998;
+}
+
+.side-link-twitter {
+  background-color: #1da1f2;
+}
+
+.side-link-linkedin {
+  background-color: #0e76a8;
+}
+
+.side-link-github {
+  background-color: #22272e;
+}
+
+.side-link-icon {
+  font-size: 38px;
+  transition: width 2s, height 2s, transform 2s;
+}
+
+.side-link-icon:hover {
+  font-size: 52px;
+  transform: rotate(360deg);
+}
